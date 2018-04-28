@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>Bootstrap Starter</title>
+    <meta name="generator" content="Bootply" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  
+  <!--[if lt IE 9]>
+          <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <style type="text/css">
+.container-fluid.principal {
+    border: 1px solid black;
+    /*background-color: #eaebee;*/
+}
+
+.container-fluid.base {
+    margin: 20%;
+}
+
+.navbar-add {
+    font-size: 18pt;
+    color: #163e63;
+}
+
+.navbar-cancelar {
+    margin-left: 70px;
+    max-width: 270px;
+    margin-top: 15px;
+    vertical-align: middle;
+    background-color: #dc3545;
+    color: white;
+    border-color: transparent;
+    border-radius: 0.25rem;
+}
+
+.pull-right {
+    float: right !important;
+}
+
+.container-fluid.secundario {
+    margin-top: 30px;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+p.asterisco.advogado {
+    margin-left: 105px;
+    margin-bottom: 10px;
+}
+
+span.asterisco {
+    color: gold;
+    font-size: 24pt;
+}
+
+.form-control.cadastro {
+    background-color: #f6f7fa;
+}
+
+.form-control.cadastro.obrigatorio {
+    margin-top: -20px;
+}
+
+input.form-control.cadastro {
+    margin-top: 3px;
+}
+
+input.form-control.cadastro.mtm1 {
+    margin-top: -1px;
+}
+
+div.novalinha {
+    margin-top: 20px;
+}
+
+.mbottom30 {
+    margin-bottom: 30px;
+}
+
+.mtop30 {
+    margin-top: 30px;
+}
+
+.mtop10 {
+    margin-top: 10px;
+}
+
+.mtopm10 {
+    margin-top: -12px;
+}
+
+i.icon {
+    cursor: pointer;
+    font-size: 1.9em;
+    border-color: transparent;
+    margin-top: 5px;
+}
+
+i.fa-plus-circle.icon {
+    color: #24c0eb;
+}
+
+i.fa-trash-alt.icon {
+    color: #a8b0b0;
+}
+
+i.fa-caret-square-up.icon {
+    font-size: 1em;
+    background-color: white;
+    color: #5043f3;
+}
+
+button.btn-default.button {
+    margin-left: 20px;
+}
+
+footer.footer.cadastro {
+    margin-left: 11%;
+}
+    </style>
+  
+  <script type="text/javascript">
+    function setarMask() {
+        console.log($('input#rg'));
+        $('input#rg').mask('99.999.999-9');
+    }
+  </script>
+
+</head>
+
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <nav class="navbar navbar-light bg-faded" style="background-color: #eaebee">
+                <a class="navbar-brand" href="">Adicionar Pessoa</a>
+                <button class="btn btn-danger my-2 my-sm-2" type="button">Cancelar Cadastro</button>
+            </nav>
+            <div class="row mtop30">
+                <div class="col-md-12">
+                    <form role="form">
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <label>TIPO</label>
+                                    <p class="asterisco tipo">*</p>
+                                    <select class="form-control cadastro obrigatorio">
+                                        <option>Pessoa Física</option>
+                                        <option>Pessoa Jurídica</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="label-danger">TRATAMENTO</label>
+                                    <input class="form-control cadastro" placeholder="Tratamento"/>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="control-label">NOME</label>
+                                    <p class="asterisco">*</p>
+                                    <input class="form-control cadastro obrigatorio" placeholder="Informe o nome completo"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <label class="control-label">GÊNERO</label>
+                                    <select class="form-control cadastro genero">
+                                        <option>Masculino</option>
+                                        <option>Feminino</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-3">
+                                    <label class="control-label">CPF</label>
+                                    <input type="text" class="form-control cadastro mtm1"
+                                           ng-model="valor" placeholder="000.000.000-00" ui-br-cpf-mask/>
+                                </div>
+                                <div class="col-md-2">
+                                    <label class="control-label">RG</label>
+                                    <input type="text" id="rg" onload="setarMask()" class="form-control cadastro mtm1"
+                                           placeholder="Informe o RG" pattern="/^([0-9])+$/"/>
+                                </div>
+                                <div class="col-md-2">
+                                    <label class="control-label">NASCIMENTO</label>
+                                    <input type="text" class="form-control cadastro mtm1" ui-date-mask="DD/MM/YYYY" ng-model="data"
+                                           placeholder="Informe a data"/>
+                                </div>
+                                <div class="col-md-2">
+                                    <label class="control-label">ADVOGADO?</label>
+                                    <p class="asterisco advogado">*</p>
+                                    <select class="form-control cadastro obrigatorio">
+                                        <option>Não</option>
+                                        <option>Sim</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <label class="control-label">QUALIFICAÇÃO</label>
+                                    <input type="text" class="form-control cadastro mtm1"
+                                           placeholder="Insira mais informações sobre a pessoa"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <label class="control-label">PALAVRAS-CHAVE</label>
+                                    <input type="text" class="form-control cadastro mtm1"
+                                           placeholder="Informe as palavras-chave desejadas"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <label class="control-label mbottom30">EMAIL</label>
+                                    <select class="form-control cadastro obrigatorio">
+                                        <option>Pessoal</option>
+                                        <option>Comercial</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-4 mtop30">
+                                    <input type="email" class="form-control cadastro"
+                                           placeholder="Informe o endereço e-mail"/>
+                                </div>
+                                <div class="col-md-2 mtop30">
+                                    <i class="fa fa-plus-circle icon"></i>
+                                </div>
+                                <div class="col-md-2 mtop30">
+                                    <div class="radio-inline">
+                                        <input type="radio" class="form-control cadastro radio"/> <label class="radio">PRINCIPAL</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <label class="control-label mbottom30">TELEFONE</label>
+                                    <select class="form-control cadastro obrigatorio">
+                                        <option>Pessoal</option>
+                                        <option>Comercial</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-3 mtop30">
+                                    <input type="text" class="form-control cadastro" ng-model="telefone1" ui-br-phone-number
+                                           placeholder="Informe o telefone"/>
+                                </div>
+                                <div class="col-md-2 mtop30">
+                                    <i class="fa fa-trash-alt icon"></i>
+                                </div>
+                                <div class="col-md-2 mtop30">
+                                    <input type="radio" name="telefone" ng-model="telefone" class="form-control cadastro radio"/> <label class="radio">PRINCIPAL</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-2 mtop10">
+                                    <select class="form-control cadastro obrigatorio">
+                                        <option>Pessoal</option>
+                                        <option>Comercial</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-3 mtopm10">
+                                    <input type="text" class="form-control cadastro" ng-model="telefone2" ui-br-phone-number
+                                           placeholder="Informe o telefone"/>
+                                </div>
+                                <div class="col-md-2 mtopm10">
+                                    <i class="fa fa-plus-circle icon"></i>
+                                </div>
+                                <div class="col-md-2 mtopm10">
+                                    <input type="radio" name="telefone" ng-model="telefone" class="form-control cadastro radio"/> <label class="radio">PRINCIPAL</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <label class="control-label mbottom30">ENDEREÇO</label>
+                                    <select class="form-control cadastro obrigatorio">
+                                        <option>Pessoal</option>
+                                        <option>Comercial</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-7 mtop30">
+                                    <input type="text" class="form-control cadastro"
+                                           placeholder="Informe o endereço completo"/>
+                                </div>
+
+                                <div class="col-md-2 mtop30">
+                                    <i class="fa fa-plus-circle icon"></i>
+                                </div>
+
+                                <div class="col-md-1 mtop30">
+                                    <input type="radio" class="form-control cadastro radio"/> <label class="radio">PRINCIPAL</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <i class="fa fa-caret-square-up icon"></i><label class="ocultar">&nbsp;Ocultar campos</label>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-info">
+                            Salvar
+                        </button>
+                        <button type="button" class="btn btn-danger">
+                            Cancelar
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <script type='text/javascript' src="//cdnjs.cloudflare.com/ajax/libs/angular-input-masks/4.1.0/angular-input-masks-standalone.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular-input-masks/4.1.0/angular-input-masks-dependencies.js"></script>
+    <script type='text/javascript' src="//cdnjs.cloudflare.com/ajax/libs/angular-input-masks/4.1.0/angular-input-masks.br.js"></script>
+    <script type='text/javascript' src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+    <script type='text/javascript' src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+</body>
+</html>
